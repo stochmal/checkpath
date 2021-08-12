@@ -3,7 +3,7 @@ import os
 
 from pprint import pprint
 
-COPYRIGHT = 'Copyright (C) 2021 Tomasz Stochmal<stochmal@gmail.com>\nhttps://github.com/stochmal/checkpath/blob/main/LICENSE\n'
+COPYRIGHT = 'Copyright (C) 2021 Tomasz Stochmal <stochmal@gmail.com>\nhttps://github.com/stochmal/checkpath/blob/main/LICENSE\n'
 
 def main():
 
@@ -15,11 +15,13 @@ def main():
         folders = path.split(';')
         for folder in folders:
             exist = os.path.exists(folder)
-            
+
             if not exist:
-                print(folder)
-            
-            
+                print(folder, '\t*** FOLDER NOT FOUND ***')
+            else:
+                files = os.listdir(folder)
+                if(len(files)==0):
+                    print(folder, '\t*** FOLDER IS EMPTY ***')
 
 
 if __name__=='__main__':
