@@ -11,10 +11,17 @@ def main():
     print(LICENSE)
     print()
 
+    if os.name == 'nt':
+        separator = ';'
+    else:
+        separator = ':'
+    print("os name:", os.name, "use", separator)
+
+    print()
     print('--- folders that can be removed from PATH ---')
 
     path = os.environ['PATH']
-    folders = path.split(';')
+    folders = path.split(separator)
     for folder in folders:
         exist = os.path.exists(folder)
 
