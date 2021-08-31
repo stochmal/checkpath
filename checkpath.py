@@ -23,6 +23,7 @@ def main():
 
     path = os.environ['PATH']
     folders = path.split(separator)
+    folders.sort()
     for folder in folders:
         exist = os.path.exists(folder)
 
