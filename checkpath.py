@@ -18,7 +18,7 @@ def main():
     print('os name is', os.name, 'use', separator, 'separator')
 
     print()
-    print('--- folders that can be removed from PATH are marked *** ---')
+    print('*** folders that can be removed from PATH')
     print()
 
     path = os.environ['PATH']
