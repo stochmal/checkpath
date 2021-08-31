@@ -23,12 +23,13 @@ jobs:
           # build single exe in dist folder
           pyinstaller -F checkpath.py
 
-      - name: Install GitHub cli
+      - name: Upload using GitHub cli
         run: |
           # build single exe in dist folder
           choco install gh -y
           gh auth login --with-token $env:GITHUB_TOKEN
-          gh release upload Release dist\checkpath.exe
+          Get-ChildItem env:
+          gh release upload $env:GITHUB_ACTION dist\checkpath.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
