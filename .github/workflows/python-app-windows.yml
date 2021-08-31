@@ -24,7 +24,6 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pyinstaller
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Build with pyinstaller
       run: |
         # build single exe in dist folder
