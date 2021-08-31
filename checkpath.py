@@ -15,10 +15,11 @@ def main():
         separator = ';'
     else:
         separator = ':'
-    print("os name:", os.name, "use", separator)
+    print('os name is', os.name, 'use', separator, 'separator')
 
     print()
-    print('--- folders that can be removed from PATH ---')
+    print('--- folders that can be removed from PATH are marked *** ---')
+    print()
 
     path = os.environ['PATH']
     folders = path.split(separator)
@@ -26,11 +27,13 @@ def main():
         exist = os.path.exists(folder)
 
         if not exist:
-            print(folder, '\t*** FOLDER NOT FOUND ***')
+            print('*** FOLDER NOT FOUND', '\t', folder)
         else:
             files = os.listdir(folder)
             if len(files)==0:
-                print(folder, '\t*** FOLDER IS EMPTY ***')
+                print('*** FOLDER IS EMPTY', '\t', folder)
+            else:
+                print('%6d' % len(files), "files found", '\t', folder)
 
 if __name__=='__main__':
     main()
