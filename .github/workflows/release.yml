@@ -29,7 +29,7 @@ jobs:
           choco install gh -y
           gh auth login --with-token $env:GITHUB_TOKEN
           Get-ChildItem env:
-          Compress-Archive -Path build\exe.win-*\*.* -DestinationPath checkpath.zip          
+          Compress-Archive -Path build\exe.win-* -DestinationPath checkpath.zip          
           gh release upload $env:GITHUB_REF.Split('/')[2] checkpath.zip checkpath.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
