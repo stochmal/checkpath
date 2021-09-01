@@ -36,5 +36,8 @@ def main():
             else:
                 print('%6d' % len(files), "files found", '\t', folder)
 
+    print()
+    input("press [Enter] to exit")
+
 if __name__=='__main__':
     main()
