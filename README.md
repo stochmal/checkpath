@@ -6,3 +6,5 @@ install [python3](https://www.python.org/downloads/) and execute *[checkpath.py]
 or
 
 download *checkpath.zip* from [Latest release](https://github.com/stochmal/checkpath/releases/latest)
+
+use [checkpath-go](https://github.com/stochmal/checkpath-go) that replaces this Python project
